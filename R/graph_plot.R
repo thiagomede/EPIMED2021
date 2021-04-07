@@ -20,7 +20,7 @@ graph_plot=function(df,var_plot,var_label, var_grid=NULL){
       theme(axis.text.x = element_text(size=6))+ylab('Prop.')+
       scale_fill_discrete(name = var_label)+
       theme_classic()+
-      theme(axis.text.x = element_text(size=6),
+      theme(axis.text.x = element_text(size=8),
             axis.title.x = element_text(size=8))+
       scale_fill_manual(values = c("azure3","darkred"))
     return(a)}else{
@@ -31,7 +31,7 @@ graph_plot=function(df,var_plot,var_label, var_grid=NULL){
         ylab('Prop.')+
         scale_fill_discrete(name = var_label)+
         theme_classic()+scale_fill_manual(values = c("azure3","darkred"))+
-        theme(axis.text.x = element_text(size=6,angle = 90),
+        theme(axis.text.x = element_text(size=8,angle = 90),
               axis.title.x = element_text(size=8))+
         facet_wrap(as.formula(paste('~', var_grid)))
       return(a)
