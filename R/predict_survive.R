@@ -54,7 +54,7 @@ predict_survive=function(df,df_new_pacients=NULL,prop_train=0.8,seed=9238,
 
   list_result[[2]]=g
 
-  aux_teste=table(teste3$PROB_BIN,teste3$UD_CODE)
+  aux_teste=table(teste3$PROB_BIN,teste3$UnitDischargeCode)
   aux_teste=data.frame(PROB_ALIVE=c(.05,.15,.25,.35,.45,.55,.65,.75,.85,.95),A=aux_teste[1:10],D=aux_teste[11:20])
   aux_teste$SOMA=aux_teste$A+aux_teste$D
   aux_teste=aux_teste[which(aux_teste$SOMA>0),]
