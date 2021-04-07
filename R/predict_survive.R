@@ -19,7 +19,7 @@ predict_survive=function(df,df_new_pacients=NULL,prop_train=0.8,seed=9238,
 
   #require('ranger')
   list_result=list()
-  aux_form=paste('UD_CODE','~',paste(features,collapse = '+'))
+  aux_form=paste('UnitDischargeCode','~',paste(features,collapse = '+'))
 
   set.seed(seed)
   aux_train=sample(x = 1:nrow(df),size =round(prop_train*nrow(df)),replace=F)
@@ -49,7 +49,7 @@ predict_survive=function(df,df_new_pacients=NULL,prop_train=0.8,seed=9238,
   teste3$PROB=pred$predictions[,1]
   teste3$PROB_BIN=NA
   teste3['PROB_BIN']=cut(unlist(teste3['PROB']),breaks = seq(0,1,0.1),include.lowest = T)
-  g=graph_plot(teste3,var_plot = 'PROB_BIN',var_label = 'UD_CODE')
+  g=graph_plot(teste3,var_plot = 'PROB_BIN',var_label = 'UnitDischargeCode')
 
 
   list_result[[2]]=g
