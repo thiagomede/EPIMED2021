@@ -16,7 +16,7 @@ graph_plot=function(df,var_plot,var_label, var_grid=NULL){
   if(is.null(var_grid)){
 
     a=ggplot(df,aes(x=!!x2,fill=!!y2))+geom_bar(position = 'fill',color='black')+
-      labs(title=paste('Relation Between ',var_plot,' and ',var_label))+
+      labs(title=paste(var_label,' by ',var_plot))+
       theme(axis.text.x = element_text(size=6))+ylab('Prop.')+
       scale_fill_discrete(name = var_label)+
       theme_classic()+
@@ -26,7 +26,7 @@ graph_plot=function(df,var_plot,var_label, var_grid=NULL){
     return(a)}else{
 
       a=ggplot(df,aes(x=!!x2,fill=!!y2))+geom_bar(position = 'fill',color='black')+
-        labs(title=paste('Relation Between ',var_plot,' and ',var_label),
+        labs(title=paste(var_label,' by ',var_plot),
              subtitle = paste('Filtered by ',var_grid))+
         ylab('Prop.')+
         scale_fill_discrete(name = var_label)+
